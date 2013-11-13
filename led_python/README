@@ -1,0 +1,29 @@
+Arduino LED commander 
+---------------------
+
+Arduino LED commander is a simple GUI for controlling an output pin of the
+Arduino. This project was made as a little tutorial to show the possibility
+of controlling an Arduino board with Python and a GTK interface.
+
+Requirements
+------------
+
+- Python and Glade
+- Arduino Uno http://arduino.cc/
+- pyserial http://pyserial.sourceforge.net/
+
+Download
+--------
+
+Home:   http://www.affolter-engineering.ch/index.php?page=led-commander
+Git:    https://gitorious.org/arduino-led
+ 
+Author
+------
+ 
+Fabian Affolter <fabian@affolter-engineering.ch>
+
+License
+-------
+ 
+Arduino LED commander licensed under GPLv3+, for more details check COPYING. 
