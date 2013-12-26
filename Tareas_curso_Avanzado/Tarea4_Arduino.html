@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Tarea4_Arduino</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+/* GitHub stylesheet for MarkdownPad (http://markdownpad.com) */
+/* Author: Nicolas Hery - http://nicolashery.com */
+/* Version: b13fe65ca28d2e568c6ed5d7f06581183df8f2ff */
+/* Source: https://github.com/nicolahery/markdownpad-github */
+
+/* RESET
+=============================================================================*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+/* BODY
+=============================================================================*/
+
+body {
+  font-family: Helvetica, arial, freesans, clean, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 20px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+body>*:first-child {
+  margin-top: 0 !important;
+}
+
+body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* BLOCKS
+=============================================================================*/
+
+p, blockquote, ul, ol, dl, table, pre {
+  margin: 15px 0;
+}
+
+/* HEADERS
+=============================================================================*/
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1 tt, h1 code, h2 tt, h2 code, h3 tt, h3 code, h4 tt, h4 code, h5 tt, h5 code, h6 tt, h6 code {
+  font-size: inherit;
+}
+
+h1 {
+  font-size: 28px;
+  color: #000;
+}
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #ccc;
+  color: #000;
+}
+
+h3 {
+  font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  color: #777;
+  font-size: 14px;
+}
+
+body>h2:first-child, body>h1:first-child, body>h1:first-child+h2, body>h3:first-child, body>h4:first-child, body>h5:first-child, body>h6:first-child {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
+  margin-top: 10px;
+}
+
+/* LINKS
+=============================================================================*/
+
+a {
+  color: #4183C4;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* LISTS
+=============================================================================*/
+
+ul, ol {
+  padding-left: 30px;
+}
+
+ul li > :first-child, 
+ol li > :first-child, 
+ul li ul:first-of-type, 
+ol li ol:first-of-type, 
+ul li ol:first-of-type, 
+ol li ul:first-of-type {
+  margin-top: 0px;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  font-size: 14px;
+  font-weight: bold;
+  font-style: italic;
+  padding: 0;
+  margin: 15px 0 5px;
+}
+
+dl dt:first-child {
+  padding: 0;
+}
+
+dl dt>:first-child {
+  margin-top: 0px;
+}
+
+dl dt>:last-child {
+  margin-bottom: 0px;
+}
+
+dl dd {
+  margin: 0 0 15px;
+  padding: 0 15px;
+}
+
+dl dd>:first-child {
+  margin-top: 0px;
+}
+
+dl dd>:last-child {
+  margin-bottom: 0px;
+}
+
+/* CODE
+=============================================================================*/
+
+pre, code, tt {
+  font-size: 12px;
+  font-family: Consolas, "Liberation Mono", Courier, monospace;
+}
+
+code, tt {
+  margin: 0 0px;
+  padding: 0px 0px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px;
+}
+
+pre>code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent;
+}
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px;
+}
+
+pre code, pre tt {
+  background-color: transparent;
+  border: none;
+}
+
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #DDDDDD;
+    background-image: linear-gradient(#F1F1F1, #DDDDDD);
+    background-repeat: repeat-x;
+    border-color: #DDDDDD #CCCCCC #CCCCCC #DDDDDD;
+    border-image: none;
+    border-radius: 2px 2px 2px 2px;
+    border-style: solid;
+    border-width: 1px;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    line-height: 10px;
+    padding: 1px 4px;
+}
+
+/* QUOTES
+=============================================================================*/
+
+blockquote {
+  border-left: 4px solid #DDD;
+  padding: 0 15px;
+  color: #777;
+}
+
+blockquote>:first-child {
+  margin-top: 0px;
+}
+
+blockquote>:last-child {
+  margin-bottom: 0px;
+}
+
+/* HORIZONTAL RULES
+=============================================================================*/
+
+hr {
+  clear: both;
+  margin: 15px 0;
+  height: 0px;
+  overflow: hidden;
+  border: none;
+  background: transparent;
+  border-bottom: 4px solid #ddd;
+  padding: 0;
+}
+
+/* TABLES
+=============================================================================*/
+
+table th {
+  font-weight: bold;
+}
+
+table th, table td {
+  border: 1px solid #ccc;
+  padding: 6px 13px;
+}
+
+table tr {
+  border-top: 1px solid #ccc;
+  background-color: #fff;
+}
+
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+/* IMAGES
+=============================================================================*/
+
+img {
+  max-width: 100%
+}
+</style>
+</head>
+<body>
+<h5>José Miguel López Pérez</h5>
+<H5 align="right">  12/8/2013 9:56:20 PM   </H5> 
+<h1>Tarea 4. Más allá de Arduino</h1>
+<p>En esta tarea se trata trata de ver cómo se modificaría un proyecto si utilizáramos un Arduino diferente. Elije un modelo distinto del UNO y documenta los cambios a realizar.</p>
+<p>Una placa que me ha llamado la atención tras investigar un poco, es la placa
+<strong>LilyPad Arduino</strong>.</p>
+<p>Esta placa tiene como particularidad que esta pensada para ser incorporada a prendas de vestir, este paradigma se suele denominar computación vestible.</p>
+<p>El Microcontrolador que incorpora <em>ATmega168V</em> o <em>ATmega328V</em>.</p>
+<p><a href="http://arduino.cc/es/Main/ArduinoBoardLilyPad">Si miramos en la pagina de arduino LilyPad:</a></p>
+<p><strong>Encontramos como curiosidad:</strong></p>
+<blockquote>
+<p><strong><em>Lavado</em></strong></p>
+<p>Lávalo bajo tu cuenta y riesgo - nosotros lo hacemos ;) . Recomendamos a los proyectos lavables, que lo hagan a mano con un detergente en polvo y secar al aire. ¡Asegúrate de quitar la fuente de alimentación antes de lavarlo!</p>
+</blockquote>
+<p><img src="http://arduino.cc/es/uploads/Main/LilyPad_3.jpg" alt="lilyPad" /></p>
+<h2>Proyecto</h2>
+<p>He implementado una especia de <strong>vumetro</strong> con led, en Arduino Mega, (en lo siguiente lo detallo), y me parece interesante hacer la adaptación a la placa LilyPad, para poder incorporarlo a alguna prenda de vestir y hacerla así mucho más vistosa.</p>
+<p>Un ejemplo de prenda que puede incorpora el diseño puede ser una corbata, o un sombrero.</p>
+<h3>Diseño en Arduino Mega</h3>
+<p>El tema es sencillo, consiste en a partir de la señal que capte un microfono,
+encender y apagar una serie de led.</p>
+<p>El problema es que un microfono (&quot;sin aplificar&quot;), genera una señal con valores demasiado pequeños para que las entrada analógica de Arduino puedan percibir los cambios.</p>
+<p>Por tanto debemos implementar un circuito amplificador, que nos ajuste la señal a un rango de voltages de 0-5 V.</p>
+<h4>Esquemático.</h4>
+<p><img src="http://lowvoltage.files.wordpress.com/2011/05/lm386_mic_amp1.png?w=604" alt="esquemaAmplificador" /></p>
+<p>Referencia del circuito: <a href="http://lowvoltage.wordpress.com/2011/05/15/lm386-mic-amp/">Circuito Amplificador Arduino</a> </p>
+<h4>Montaje.</h4>
+<p><img src="https://github.com/josemlp91/arduino/blob/master/corbata/AmpliMic_bb.png?raw=true" alt="montage" /></p>
+<p><img src="https://github.com/josemlp91/arduino/blob/master/corbata/led-micro.png?raw=true" alt="montage2" /></p>
+<h4>Codigo</h4>
+<pre><code>int sensorPin = A0; //Pin del micro 
+int sensorValue = 0;  //Valor leido por micro
+
+int led=2;
+int led1=4;
+int led2=6;
+int led3=8;
+int analogPin=0;
+
+void setup() {
+
+  pinMode(led, OUTPUT); 
+  pinMode(led1, OUTPUT);
+  pinMode(led2, OUTPUT);
+  pinMode(led3, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+
+  int mn = 1024;     // mn only decreases
+  int mx = 0;        // mx only increases
+
+  // Perform 10000 reads. Update mn and mx for each one.
+  for (int i = 0; i &lt; 1000; ++i) {
+    int val = analogRead(analogPin);
+    mn = min(mn, val);
+    mx = max(mx, val);
+  }
+
+  Serial.print(&quot;m=&quot;);
+  Serial.print(mn);  
+  Serial.print(&quot; M=&quot;);
+  Serial.print(mx);  
+  Serial.print(&quot; D=&quot;);
+  Serial.print(mx-mn);  
+  Serial.println();  
+
+  int dif=mx-mn;
+
+  if (dif&lt;30){   //Establecemos el umbral a 256 (entre 0-1024)
+
+    digitalWrite(led, LOW);
+    digitalWrite(led1, LOW);  
+    digitalWrite(led2, LOW);  
+    digitalWrite(led3, LOW);    
+    Serial.println(&quot;Un led encencido&quot;);    
+  }
+
+  else if ((dif&gt;=30) &amp;&amp;(dif&lt;200) ) {  
+    digitalWrite(led, HIGH);
+    digitalWrite(led1,LOW);  
+    digitalWrite(led2, LOW);  
+    digitalWrite(led3, LOW);    
+    Serial.println(&quot;Dos leds encendido&quot;);
+
+  }
+
+
+  else if ((dif&gt;=200) &amp;&amp;(dif&lt;330) ) {  
+    digitalWrite(led, HIGH);
+    digitalWrite(led1,HIGH);  
+    digitalWrite(led2, LOW);  
+    digitalWrite(led3, LOW);    
+    Serial.println(&quot;Dos leds encendido&quot;);
+
+  }
+
+  else if ((dif&gt;=330) &amp;&amp;(dif&lt;470) ) {  
+    digitalWrite(led, HIGH);
+    digitalWrite(led1, HIGH);  
+    digitalWrite(led2, HIGH);  
+    digitalWrite(led3, LOW);    
+    Serial.println(&quot;Tres leds encendido&quot;);
+
+  }
+
+else {
+
+    digitalWrite(led, HIGH);
+    digitalWrite(led1, HIGH);  
+    digitalWrite(led2, HIGH);  
+    digitalWrite(led3, HIGH);    
+    Serial.println(&quot;Todos leds encendido&quot;);
+}
+
+  sensorValue = analogRead(sensorPin);    
+  Serial.println(sensorValue); 
+}
+</code></pre>
+
+<h3>Diseño en Arduino LilyPad</h3>
+<p>Para realizar las comunicaciones LilyPad da la posibilidad de utilizar, una especie de hilos (&quot;como los que se utilizan los sastres&quot;) conductores.</p>
+<p>LilyPad también ha diseñado una especie de LED planos, que ya incorporan resistencia interna, especialmente destinados a ser aplicados a prendas de vestir.</p>
+<p>Los led los podemos conectar respetando el mismo número de puerto que usábamos en Arduino Mega, y así evitar modificar esto en el código.</p>
+<p><strong><em>Podemos verlo en la siguiente imgagen:</em></strong></p>
+<p><img src="https://sfecdn.s3.amazonaws.com/tutorialimages/lilypadarduino/5.5small.JPG" /></p>
+<p>Respecto a la entrada igualmente podemos utilizar el puerto A0, siendo por tanto el código totalmente compatible.</p>
+<p>Si es interesante realizar un montaje del circuito amplificador lo más compacto posible, y buscar alguna batería lo menos aparatosa posible.</p>
+<hr />
+<h4>Referencias</h4>
+<ol>
+<li><a href="http://arduino.cc/es/Main/ArduinoBoardLilyPad">Arduino LilyPad</a></li>
+<li><a href="http://lilypadarduino.org/">LilyPad</a></li>
+<li><a href="https://www.sparkfun.com/categories/135">Accesorios</a></li>
+</ol>
+
+</body>
+</html>
+<!-- This document was created with MarkdownPad, the Markdown editor for Windows (http://markdownpad.com) -->
